@@ -40,16 +40,20 @@
             box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8);
         }
 
-        /* FOTO PRINCIPAL - FORMATO ORIGINAL REDONDO */
+        /* FOTO PRINCIPAL - FORMATO OVAL E TAMANHO AMPLIADO */
         .card.profile img.avatar {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
+            width: 280px; /* Tamanho maior para destacar a marca */
+            height: auto;
+            border-radius: 80px; /* Formato oval que não corta o nome da empresa */
             border: 4px solid #00d4ff;
             margin-bottom: 25px;
-            object-fit: cover;
+            object-fit: contain;
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
             transition: transform 0.4s ease;
+        }
+
+        .card.profile img.avatar:hover {
+            transform: scale(1.05);
         }
 
         /* FONTE MODERNA PARA O NOME */
@@ -181,7 +185,7 @@
 
     <div class="container">
         <div class="card profile">
-            <!-- Foto de Perfil Redonda Original -->
+            <!-- Foto de Perfil Oval e Grande -->
             <img src="https://Rejlander77.github.io/1.png" alt="Fellipe Rejlander" class="avatar">
             
             <h1>Fellipe Rejlander</h1>
@@ -230,7 +234,7 @@
             <div class="social-links">
                 <a href="https://wa.me/5511945412377?text=Olá!%20me%20chamo:%20(%20 )%20gostaria%20de%20solicitar%20um%20orçamento,%20quando%20está%20disponível?" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 <a href="https://www.linkedin.com/in/fellipe-rejlander-81232b217/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:frejlander@gmail.com?subject=Solicitação de Serviço&body=Nome: "><i class="fas fa-envelope"></i></a>
+                <a href="mailto:frejlander@gmail.com?subject=Solicitação de Serviço&body=Nome: %0A%0AManutenção ou Instalação: %0A%0ANível de Prioridade: "><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </div>
