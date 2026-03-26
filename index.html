@@ -3,163 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fellipe Rejlander - Especialista em Segurança</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Bio | Fellipe Rejlander</title>
+    <script src="https://unpkg.com"></script>
     <style>
-        /* ESTILO DO FUNDO COMPRIMIDO */
+        :root {
+            --bg: #0a0a0a;
+            --card: #161616;
+            --text: #ededed;
+            --accent: #3b82f6; /* Azul Tech */
+            --border: #262626;
+        }
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #050505; /* Fundo preto para preencher espaços */
-            background-image: linear-gradient(rgba(10, 15, 20, 0.92 ), rgba(10, 15, 20, 0.92)), 
-                              url('https://Rejlander77.github.io/1.png' );
-            background-size: contain; /* Comprime a imagem para não ficar tão aberta */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            color: #ecf0f1;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            margin: 0;
             padding: 20px;
         }
-
-        /* CARD COM EFEITO DE VIDRO FOSCO */
-        .card.profile {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            padding: 50px 40px;
-            text-align: center;
-            max-width: 550px;
+        .container {
+            max-width: 450px;
             width: 100%;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
         }
-
-        /* FOTO PRINCIPAL - FORMATO PARA NÃO CORTAR O NOME + EFEITO ZOOM */
-        .card.profile img {
-            width: 250px; /* Aumentado conforme solicitado */
-            height: auto;
-            border-radius: 15px; /* Cantos levemente arredondados para não cortar o nome */
-            border: 3px solid #00d4ff;
-            margin-bottom: 30px;
-            object-fit: contain;
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Suavidade no zoom */
-            cursor: pointer;
-        }
-
-        /* EFEITO DE AUMENTAR AO PASSAR O MOUSE */
-        .card.profile img:hover {
-            transform: scale(1.15); /* Aumenta 15% ao passar o mouse */
-            box-shadow: 0 0 50px rgba(0, 212, 255, 0.7);
-        }
-
-        h1 {
-            color: #00d4ff;
-            margin-bottom: 15px;
-            font-size: 34px;
-            letter-spacing: -1px;
-            font-weight: 700;
-        }
-
-        .description {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #bdc3c7;
-            margin-bottom: 12px;
-        }
-
-        .prizm-tag {
-            font-size: 15px;
-            color: #00d4ff;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 35px;
-        }
-
-        /* LINKS SOCIAIS */
-        .social-links {
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 20px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: 35px;
-            margin-top: 10px;
-        }
-
-        .social-links a {
-            color: #ecf0f1;
-            font-size: 36px;
-            transition: all 0.4s ease;
+            transition: 0.3s;
             text-decoration: none;
+            color: var(--text);
         }
-
-        .social-links a:hover {
-            color: #00d4ff;
+        .card:hover {
+            border-color: var(--accent);
             transform: translateY(-5px);
         }
-
-        /* BOTÃO DE CONTATO PRINCIPAL */
-        .btn-whatsapp {
-            display: inline-block;
-            background: linear-gradient(135deg, #00d4ff, #008fb3);
-            color: #0a0f14;
-            padding: 18px 45px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 800;
-            margin-top: 40px;
+        .profile {
+            grid-column: span 2;
+            text-align: center;
+        }
+        .profile img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 6px solid #ffffff;
+            box-shadow:0 10px 30px rgba(0, 0, 0, 0.4);
+            Display: block;
+            margin-left: auto;
+            margin-right: auto;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
+      /* Efeito ao passar o mouse (expandir) */
+.profile img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
 
-        .btn-whatsapp:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.4);
-        }
+.profile h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.profile p {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+Pelo este novo bloco (melhorado):
+CSS/* Imagem de perfil - expandir no hover */
+.profile {
+    text-align: center;
+}
+
+.profile .profile-img-container {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.profile .profile-img-container:hover {
+    transform: scale(1.12);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent, #007bff);
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.profile .profile-img-container:hover img {
+    transform: scale(1.08);
+}
+
+.profile h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.profile p {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 5px 0 0;
+}
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="card profile">
-            <!-- Foto Principal com Zoom e Formato que não corta o nome -->
-            <img src="https://Rejlander77.github.io/1.png" alt="Fellipe Rejlander">
-            
-            <h1>Fellipe Rejlander</h1>
-            
-            <p class="description">Especialista em dispositivos de segurança e soluções de monitoramento inteligente.</p>
-            
-            <p class="prizm-tag">CRIADOR DO PRIZM SCAN 2.0</p>
-
-            <div class="social-links">
-                <!-- WHATSAPP -->
-                <a href="https://wa.me/5511945412377?text=Olá!%20me%20chamo:%20(%20 )%20gostaria%20de%20solicitar%20um%20orçamento,%20quando%20está%20disponível?" target="_blank" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-
-                <!-- LINKEDIN -->
-                <a href="https://www.linkedin.com/in/fellipe-rejlander-81232b217/" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                
-                <!-- E-MAIL -->
-                <a href="mailto:frejlander@gmail.com?subject=Solicitação%20de%20Serviço%20-%20Prizm%20Scan&body=Nome:%20%0A%0AManutenção%20ou%20Instalação:%20%0A%0ANível%20de%20Prioridade%20(Baixa%20|%20Média%20|%20Alta ):" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-
-            <a href="https://wa.me/5511945412377?text=Olá!%20me%20chamo:%20(%20 )%20gostaria%20de%20solicitar%20um%20orçamento,%20quando%20está%20disponível?" target="_blank" class="btn-whatsapp">
-                Solicitar Orçamento
-            </a>
-        </div>
+<div class="container">
+    <!-- Perfil -->
+    <div class="card profile">
+        <!-- Substitua o link abaixo pela sua foto ou remova a tag img -->
+        <img src="https://Rejlander77.github.io/1.png" alt="Foto de Perfil de Fellipe Rejlander">
+        <h1>Fellipe Rejlander</h1>
+        <p>Especialista em dispositivos de segurança e soluções de monitoramento inteligente</p>
     </div>
+
+    <!-- Links -->
+    <a href="https://wa.me/5511945412377?text=Olá%20quero&20um%20orçamento%20grátis!" class="card"target="_blank" rel="noopener noreferrer">
+        <i data-lucide="message-circle" class="icon"></i>
+        <h3>WhatsApp</h3>
+        <span>Fale comigo agora</span>
+    </a>
+
+    <a href="https://linkedin.com" class="card">
+        <i data-lucide="linkedin" class="icon"></i>
+        <h3>LinkedIn</h3>
+        <span>Rede Profissional</span>
+    </a>
+
+    <a href="mailto:frejlander@gmail.com?subject=Solicitação%20de%20orçamento%20e%20suporte%20técnico."
+        " class="card email-card" target="_blank" rel="noopener noreferrer" aria-label="Enviar e-mail para suporte">
+        <i data-lucide="mail" class="icon"></i>
+        <div>
+            <h3>Mande um E-mail!</h3>
+            <span>Solicite seu orçamento Grátis!</span>
+        </div>
+    </a>
+
+    <a href="#" class="card">
+        <i data-lucide="terminal" class="icon"></i>
+        <h3>Portfólio</h3>
+        <span>Meus Projetos</span>
+    </a>
+
+    <a href="#" class="card">
+        <i data-lucide="calendar" class="icon"></i>
+        <h3>Agenda</h3>
+        <span>Marque uma reunião</span>
+    </a>
+</div>
+
+<script>
+    lucide.createIcons();
+</script>
 
 </body>
 </html>
