@@ -6,15 +6,17 @@
     <title>Fellipe Rejlander - Especialista em Segurança</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* ESTILO DO FUNDO COM SUA IMAGEM 1.PNG */
+        /* ESTILO DO FUNDO COMPRIMIDO */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(rgba(10, 15, 20, 0.88 ), rgba(10, 15, 20, 0.88)), 
-                        url('https://Rejlander77.github.io/1.png' );
-            background-size: cover;
+            background-color: #050505; /* Fundo preto para preencher espaços */
+            background-image: linear-gradient(rgba(10, 15, 20, 0.92 ), rgba(10, 15, 20, 0.92)), 
+                              url('https://Rejlander77.github.io/1.png' );
+            background-size: contain; /* Comprime a imagem para não ficar tão aberta */
             background-position: center;
+            background-repeat: no-repeat;
             background-attachment: fixed;
             color: #ecf0f1;
             display: flex;
@@ -24,40 +26,47 @@
             padding: 20px;
         }
 
-        /* CARD COM EFEITO DE VIDRO FOSCO (GLASSMORPHISM) */
+        /* CARD COM EFEITO DE VIDRO FOSCO */
         .card.profile {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 30px;
-            padding: 60px 40px;
+            padding: 50px 40px;
             text-align: center;
             max-width: 550px;
             width: 100%;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
         }
 
-        /* FOTO PRINCIPAL COM DESTAQUE MÁXIMO SOLICITADO */
+        /* FOTO PRINCIPAL - FORMATO PARA NÃO CORTAR O NOME + EFEITO ZOOM */
         .card.profile img {
-            width: 220px; /* Aumentado para 220px para ser o centro das atenções */
-            height: 220px;
-            border-radius: 50%;
-            border: 5px solid #00d4ff;
+            width: 250px; /* Aumentado conforme solicitado */
+            height: auto;
+            border-radius: 15px; /* Cantos levemente arredondados para não cortar o nome */
+            border: 3px solid #00d4ff;
             margin-bottom: 30px;
-            object-fit: cover;
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            object-fit: contain;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Suavidade no zoom */
+            cursor: pointer;
+        }
+
+        /* EFEITO DE AUMENTAR AO PASSAR O MOUSE */
+        .card.profile img:hover {
+            transform: scale(1.15); /* Aumenta 15% ao passar o mouse */
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.7);
         }
 
         h1 {
             color: #00d4ff;
             margin-bottom: 15px;
-            font-size: 36px;
+            font-size: 34px;
             letter-spacing: -1px;
             font-weight: 700;
         }
 
-        /* AS DUAS FRASES ARGUMENTATIVAS QUE VOCÊ GOSTOU */
         .description {
             font-size: 18px;
             line-height: 1.6;
@@ -85,13 +94,13 @@
         .social-links a {
             color: #ecf0f1;
             font-size: 36px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s ease;
             text-decoration: none;
         }
 
         .social-links a:hover {
             color: #00d4ff;
-            transform: scale(1.3);
+            transform: translateY(-5px);
         }
 
         /* BOTÃO DE CONTATO PRINCIPAL */
@@ -108,7 +117,6 @@
             box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 16px;
         }
 
         .btn-whatsapp:hover {
@@ -121,19 +129,17 @@
 
     <div class="container">
         <div class="card profile">
-            <!-- Foto de Perfil (1.png) - Tamanho 220px -->
+            <!-- Foto Principal com Zoom e Formato que não corta o nome -->
             <img src="https://Rejlander77.github.io/1.png" alt="Fellipe Rejlander">
             
             <h1>Fellipe Rejlander</h1>
             
-            <!-- FRASE 01 -->
             <p class="description">Especialista em dispositivos de segurança e soluções de monitoramento inteligente.</p>
             
-            <!-- FRASE 02 -->
             <p class="prizm-tag">CRIADOR DO PRIZM SCAN 2.0</p>
 
             <div class="social-links">
-                <!-- WHATSAPP COM NOVA MENSAGEM SOLICITADA -->
+                <!-- WHATSAPP -->
                 <a href="https://wa.me/5511945412377?text=Olá!%20me%20chamo:%20(%20 )%20gostaria%20de%20solicitar%20um%20orçamento,%20quando%20está%20disponível?" target="_blank" title="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
@@ -143,13 +149,12 @@
                     <i class="fab fa-linkedin"></i>
                 </a>
                 
-                <!-- E-MAIL COM CAMPOS TÉCNICOS -->
+                <!-- E-MAIL -->
                 <a href="mailto:frejlander@gmail.com?subject=Solicitação%20de%20Serviço%20-%20Prizm%20Scan&body=Nome:%20%0A%0AManutenção%20ou%20Instalação:%20%0A%0ANível%20de%20Prioridade%20(Baixa%20|%20Média%20|%20Alta ):" title="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
 
-            <!-- BOTÃO DE CONTATO RÁPIDO COM A MESMA MENSAGEM -->
             <a href="https://wa.me/5511945412377?text=Olá!%20me%20chamo:%20(%20 )%20gostaria%20de%20solicitar%20um%20orçamento,%20quando%20está%20disponível?" target="_blank" class="btn-whatsapp">
                 Solicitar Orçamento
             </a>
@@ -158,3 +163,4 @@
 
 </body>
 </html>
+
