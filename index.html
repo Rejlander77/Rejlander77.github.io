@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fellipe Rejlander - Especialista em Segurança</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <style>
         /* ESTILO DO FUNDO ULTRA ESTILIZADO */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Rajdhani', sans-serif;
             background: radial-gradient(circle at center, rgba(10, 15, 20, 0.7 ) 0%, rgba(5, 5, 5, 1) 100%), 
                         url('https://Rejlander77.github.io/1.png' );
             background-size: cover;
@@ -21,11 +22,11 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 40px 20px;
             overflow-x: hidden;
         }
 
-        /* CARD COM EFEITO DE VIDRO PROFUNDO E BORDA NEON */
+        /* CARD COM EFEITO DE VIDRO PROFUNDO */
         .card.profile {
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(25px);
@@ -34,138 +35,145 @@
             border-radius: 35px;
             padding: 50px 40px;
             text-align: center;
-            max-width: 500px;
+            max-width: 550px;
             width: 100%;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 212, 255, 0.05);
-            position: relative;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8);
         }
 
-        /* FOTO PRINCIPAL COM ZOOM E BRILHO */
+        /* FOTO PRINCIPAL - FORMATO ORIGINAL REDONDO */
         .card.profile img.avatar {
             width: 200px;
-            height: auto;
-            border-radius: 20px;
-            border: 3px solid #00d4ff;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid #00d4ff;
             margin-bottom: 25px;
-            object-fit: contain;
+            object-fit: cover;
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
+            transition: transform 0.4s ease;
         }
 
-        .card.profile img.avatar:hover {
-            transform: scale(1.1) rotate(2deg);
-            box-shadow: 0 0 50px rgba(0, 212, 255, 0.6);
-        }
-
+        /* FONTE MODERNA PARA O NOME */
         h1 {
+            font-family: 'Orbitron', sans-serif;
             color: #00d4ff;
             margin-bottom: 10px;
-            font-size: 32px;
-            letter-spacing: -1px;
-            text-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+            font-size: 28px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        .description {
-            font-size: 17px;
-            line-height: 1.6;
+        .bio {
+            font-size: 16px;
+            line-height: 1.4;
             color: #bdc3c7;
             margin-bottom: 15px;
+            font-weight: 500;
         }
 
         .prizm-tag {
-            font-size: 14px;
+            font-size: 13px;
             color: #00d4ff;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 3px;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        /* SEÇÃO DE SERVIÇOS TÉCNICOS */
+        .services-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            text-align: left;
             margin-bottom: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .service-item {
+            font-size: 13px;
+            color: #ecf0f1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-item i {
+            color: #00d4ff;
+            font-size: 12px;
         }
 
         /* FORMULÁRIO ESTILIZADO */
         .form-container {
-            margin-top: 30px;
             text-align: left;
             background: rgba(0, 0, 0, 0.4);
             padding: 25px;
             border-radius: 20px;
             border: 1px solid rgba(0, 212, 255, 0.1);
-            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
         }
 
-        .form-group {
-            margin-bottom: 18px;
-        }
+        .form-group { margin-bottom: 15px; }
 
         .form-group label {
             display: block;
-            font-size: 11px;
+            font-size: 10px;
             color: #00d4ff;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             text-transform: uppercase;
             font-weight: 800;
-            letter-spacing: 1px;
         }
 
         .form-group input, .form-group select {
             width: 100%;
-            padding: 12px;
-            border-radius: 10px;
+            padding: 10px;
+            border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             background: rgba(255, 255, 255, 0.03);
             color: #fff;
             outline: none;
-            transition: all 0.3s ease;
+            font-family: 'Rajdhani', sans-serif;
         }
 
-        .form-group input:focus, .form-group select:focus {
-            border-color: #00d4ff;
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
-        }
-
-        /* BOTÃO DE AÇÃO COM PULSAÇÃO */
         .btn-action {
             display: block;
             width: 100%;
             background: linear-gradient(135deg, #00d4ff, #008fb3);
             color: #0a0f14;
-            padding: 16px;
+            padding: 15px;
             border-radius: 50px;
             border: none;
             font-weight: 900;
-            margin-top: 25px;
+            margin-top: 20px;
             transition: all 0.3s ease;
             text-transform: uppercase;
             font-size: 14px;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+            font-family: 'Rajdhani', sans-serif;
         }
 
         .btn-action:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.4);
-            filter: brightness(1.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.4);
         }
 
-        /* LINKS SOCIAIS */
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 35px;
-            margin-top: 30px;
+            gap: 30px;
+            margin-top: 25px;
         }
 
         .social-links a {
             color: #ecf0f1;
             font-size: 28px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         .social-links a:hover {
             color: #00d4ff;
-            transform: scale(1.3);
+            transform: scale(1.2);
         }
     </style>
 </head>
@@ -173,55 +181,56 @@
 
     <div class="container">
         <div class="card profile">
-            <!-- Foto Avatar Estilizada -->
+            <!-- Foto de Perfil Redonda Original -->
             <img src="https://Rejlander77.github.io/1.png" alt="Fellipe Rejlander" class="avatar">
             
             <h1>Fellipe Rejlander</h1>
             
-            <p class="description">Especialista em dispositivos de segurança e soluções de monitoramento inteligente.</p>
+            <p class="bio">Tecnólogo de dispositivos de segurança com mais de 15 anos de experiência em instalações e manutenções com suporte técnico e desenvolvimento de ferramentas inteligentes e soluções práticas.</p>
             
-            <p class="prizm-tag">CRIADOR DO PRIZM SCAN 2.0</p>
+            <span class="prizm-tag">CRIADOR DO PRIZM SCAN 2.0</span>
 
-            <!-- FORMULÁRIO DE ALTA PERFORMANCE -->
+            <!-- LISTA DE SERVIÇOS -->
+            <div class="services-list">
+                <div class="service-item"><i class="fas fa-video"></i> Câmeras IP/CFTV</div>
+                <div class="service-item"><i class="fas fa-fingerprint"></i> Controle de Acesso</div>
+                <div class="service-item"><i class="fas fa-bell"></i> Alarmes Monitorados</div>
+                <div class="service-item"><i class="fas fa-bolt"></i> Cercas Perimetrais</div>
+                <div class="service-item"><i class="fas fa-microchip"></i> Sistemas de Diagnóstico</div>
+                <div class="service-item"><i class="fas fa-tasks"></i> Controle de Tarefas</div>
+            </div>
+
+            <!-- FORMULÁRIO -->
             <div class="form-container">
                 <form id="contactForm">
                     <div class="form-group">
-                        <label><i class="fas fa-user"></i> Nome do Cliente</label>
-                        <input type="text" id="name" placeholder="Como devemos te chamar?" required>
+                        <label>Nome do Cliente</label>
+                        <input type="text" id="name" placeholder="Seu nome..." required>
                     </div>
                     <div class="form-group">
-                        <label><i class="fas fa-tools"></i> Tipo de Serviço</label>
+                        <label>Serviço Desejado</label>
                         <select id="service">
-                            <option value="Instalação">Instalação de Sistema</option>
-                            <option value="Manutenção">Manutenção Preventiva/Corretiva</option>
-                            <option value="Diagnóstico Prizm Scan">Diagnóstico Prizm Scan 2.0</option>
+                            <option value="Instalação">Instalação</option>
+                            <option value="Manutenção">Manutenção</option>
+                            <option value="Diagnóstico Prizm Scan">Diagnóstico Prizm Scan</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label><i class="fas fa-exclamation-triangle"></i> Prioridade do Atendimento</label>
+                        <label>Prioridade</label>
                         <select id="priority">
-                            <option value="Baixa">Baixa (Planejamento )</option>
-                            <option value="Média">Média (Necessário breve)</option>
-                            <option value="Alta (Urgente)">Alta (Urgência Técnica)</option>
+                            <option value="Baixa">Baixa</option>
+                            <option value="Média">Média</option>
+                            <option value="Alta">Alta (Urgente )</option>
                         </select>
                     </div>
-                    
-                    <button type="button" class="btn-action" onclick="sendForm()">
-                        <i class="fas fa-paper-plane"></i> Enviar Solicitação
-                    </button>
+                    <button type="button" class="btn-action" onclick="sendForm()">Enviar Solicitação</button>
                 </form>
             </div>
 
             <div class="social-links">
-                <a href="https://wa.me/5511945412377?text=Olá!%20me%20chamo:%20(%20 )%20gostaria%20de%20solicitar%20um%20orçamento,%20quando%20está%20disponível?" target="_blank" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/fellipe-rejlander-81232b217/" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:frejlander@gmail.com?subject=Solicitação de Serviço&body=Olá Fellipe!" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
+                <a href="https://wa.me/5511945412377?text=Olá!%20me%20chamo:%20(%20 )%20gostaria%20de%20solicitar%20um%20orçamento,%20quando%20está%20disponível?" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/fellipe-rejlander-81232b217/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:frejlander@gmail.com?subject=Solicitação de Serviço&body=Nome: "><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </div>
@@ -231,31 +240,11 @@
             const name = document.getElementById('name').value;
             const service = document.getElementById('service').value;
             const priority = document.getElementById('priority').value;
-
-            if (!name) {
-                alert("Por favor, informe seu nome para prosseguir.");
-                return;
-            }
-
-            const subject = encodeURIComponent(`Solicitação de Serviço: ${service}`);
-            const body = encodeURIComponent(
-                `SOLICITAÇÃO DE SERVIÇO TÉCNICO\n` +
-                `----------------------------------\n` +
-                `NOME: ${name}\n` +
-                `SERVIÇO: ${service}\n` +
-                `PRIORIDADE: ${priority}\n` +
-                `----------------------------------\n` +
-                `Enviado via Portfólio Prizm Scan.`
-            );
-            
+            if (!name) { alert("Informe seu nome."); return; }
+            const subject = encodeURIComponent(`Solicitação: ${service}`);
+            const body = encodeURIComponent(`NOME: ${name}\nSERVIÇO: ${service}\nPRIORIDADE: ${priority}`);
             window.location.href = `mailto:frejlander@gmail.com?subject=${subject}&body=${body}`;
         }
     </script>
-
 </body>
 </html>
-
-
-</body>
-</html>
-
