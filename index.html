@@ -31,59 +31,60 @@
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 30px;
-            padding: 50px 40px;
+            padding: 60px 40px;
             text-align: center;
-            max-width: 500px;
+            max-width: 550px;
             width: 100%;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
         }
 
-        /* FOTO PRINCIPAL AUMENTADA */
+        /* FOTO PRINCIPAL COM DESTAQUE MÁXIMO SOLICITADO */
         .card.profile img {
-            width: 180px;
-            height: 180px;
+            width: 220px; /* Aumentado para 220px para ser o centro das atenções */
+            height: 220px;
             border-radius: 50%;
-            border: 4px solid #00d4ff;
-            margin-bottom: 25px;
+            border: 5px solid #00d4ff;
+            margin-bottom: 30px;
             object-fit: cover;
-            box-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
         }
 
         h1 {
             color: #00d4ff;
-            margin-bottom: 12px;
-            font-size: 32px;
+            margin-bottom: 15px;
+            font-size: 36px;
             letter-spacing: -1px;
             font-weight: 700;
         }
 
+        /* AS DUAS FRASES ARGUMENTATIVAS QUE VOCÊ GOSTOU */
         .description {
-            font-size: 17px;
+            font-size: 18px;
             line-height: 1.6;
             color: #bdc3c7;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .prizm-tag {
-            font-size: 14px;
+            font-size: 15px;
             color: #00d4ff;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
+            letter-spacing: 3px;
+            margin-bottom: 35px;
         }
 
         /* LINKS SOCIAIS */
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 35px;
             margin-top: 10px;
         }
 
         .social-links a {
             color: #ecf0f1;
-            font-size: 32px;
+            font-size: 36px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
         }
@@ -98,15 +99,16 @@
             display: inline-block;
             background: linear-gradient(135deg, #00d4ff, #008fb3);
             color: #0a0f14;
-            padding: 15px 40px;
+            padding: 18px 45px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 800;
-            margin-top: 35px;
+            margin-top: 40px;
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-size: 16px;
         }
 
         .btn-whatsapp:hover {
@@ -119,18 +121,20 @@
 
     <div class="container">
         <div class="card profile">
-            <!-- Foto de Perfil (1.png) -->
+            <!-- Foto de Perfil (1.png) - Tamanho 220px -->
             <img src="https://Rejlander77.github.io/1.png" alt="Fellipe Rejlander">
             
             <h1>Fellipe Rejlander</h1>
             
+            <!-- FRASE 01 -->
             <p class="description">Especialista em dispositivos de segurança e soluções de monitoramento inteligente.</p>
             
+            <!-- FRASE 02 -->
             <p class="prizm-tag">CRIADOR DO PRIZM SCAN 2.0</p>
 
             <div class="social-links">
-                <!-- WHATSAPP -->
-                <a href="https://wa.me/5511945412377?text=Olá%20Fellipe,%20gostaria%20de%20solicitar%20um%20diagnóstico%20de%20rede%20e%20segurança." target="_blank" title="WhatsApp">
+                <!-- WHATSAPP COM NOVA MENSAGEM SOLICITADA -->
+                <a href="https://wa.me/5511945412377?text=Olá!%20me%20chamo:%20(%20 )%20gostaria%20de%20solicitar%20um%20orçamento,%20quando%20está%20disponível?" target="_blank" title="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
 
@@ -139,15 +143,15 @@
                     <i class="fab fa-linkedin"></i>
                 </a>
                 
-                <!-- E-MAIL COM CAMPOS DE NOME, SERVIÇO E PRIORIDADE -->
-                <a href="mailto:frejlander@gmail.com?subject=Solicitação de Serviço - Prizm Scan&body=Nome: %0A%0AManutenção ou Instalação: %0A%0ANível de Prioridade (Baixa | Média | Alta ): " title="Email">
+                <!-- E-MAIL COM CAMPOS TÉCNICOS -->
+                <a href="mailto:frejlander@gmail.com?subject=Solicitação%20de%20Serviço%20-%20Prizm%20Scan&body=Nome:%20%0A%0AManutenção%20ou%20Instalação:%20%0A%0ANível%20de%20Prioridade%20(Baixa%20|%20Média%20|%20Alta ):" title="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
 
-            <!-- BOTÃO DE CONTATO RÁPIDO -->
-            <a href="https://wa.me/5511945412377?text=Olá%20Fellipe,%20gostaria%20de%20solicitar%20um%20diagnóstico%20de%20rede%20e%20segurança." target="_blank" class="btn-whatsapp">
-                Falar com Especialista
+            <!-- BOTÃO DE CONTATO RÁPIDO COM A MESMA MENSAGEM -->
+            <a href="https://wa.me/5511945412377?text=Olá!%20me%20chamo:%20(%20 )%20gostaria%20de%20solicitar%20um%20orçamento,%20quando%20está%20disponível?" target="_blank" class="btn-whatsapp">
+                Solicitar Orçamento
             </a>
         </div>
     </div>
