@@ -40,11 +40,11 @@
             box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8);
         }
 
-        /* FOTO PRINCIPAL - FORMATO OVAL E TAMANHO AMPLIADO */
+        /* FOTO PRINCIPAL */
         .card.profile img.avatar {
-            width: 280px; /* Tamanho maior para destacar a marca */
+            width: 280px;
             height: auto;
-            border-radius: 80px; /* Formato oval que não corta o nome da empresa */
+            border-radius: 80px;
             border: 4px solid #00d4ff;
             margin-bottom: 25px;
             object-fit: contain;
@@ -52,11 +52,8 @@
             transition: transform 0.4s ease;
         }
 
-        .card.profile img.avatar:hover {
-            transform: scale(1.05);
-        }
+        .card.profile img.avatar:hover { transform: scale(1.05); }
 
-        /* FONTE MODERNA PARA O NOME */
         h1 {
             font-family: 'Orbitron', sans-serif;
             color: #00d4ff;
@@ -74,17 +71,30 @@
             font-weight: 500;
         }
 
-        .prizm-tag {
+        /* NOVO BOTÃO INTERATIVO */
+        .prizm-btn {
+            background: none;
+            border: none;
             font-size: 13px;
             color: #00d4ff;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 3px;
             margin-bottom: 25px;
-            display: block;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-bottom: 1px solid transparent;
+            font-family: 'Rajdhani', sans-serif;
         }
 
-        /* SEÇÃO DE SERVIÇOS TÉCNICOS */
+        .prizm-btn:hover {
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+            border-bottom: 1px solid #00d4ff;
+        }
+
+        /* SERVIÇOS TÉCNICOS */
         .services-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -104,12 +114,9 @@
             gap: 8px;
         }
 
-        .service-item i {
-            color: #00d4ff;
-            font-size: 12px;
-        }
+        .service-item i { color: #00d4ff; font-size: 12px; }
 
-        /* FORMULÁRIO ESTILIZADO */
+        /* FORMULÁRIO */
         .form-container {
             text-align: left;
             background: rgba(0, 0, 0, 0.4);
@@ -169,32 +176,77 @@
             margin-top: 25px;
         }
 
-        .social-links a {
-            color: #ecf0f1;
-            font-size: 28px;
-            transition: all 0.3s ease;
+        .social-links a { color: #ecf0f1; font-size: 28px; transition: all 0.3s ease; }
+        .social-links a:hover { color: #00d4ff; transform: scale(1.2); }
+
+        /* ESTILOS DA MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            justify-content: center;
+            align-items: center;
         }
 
-        .social-links a:hover {
-            color: #00d4ff;
-            transform: scale(1.2);
+        .modal-content {
+            background: rgba(20, 25, 30, 0.95);
+            border: 2px solid #00d4ff;
+            border-radius: 25px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.2);
+            position: relative;
+            text-align: left;
+            animation: modalIn 0.4s ease-out;
         }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: #00d4ff;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-title {
+            font-family: 'Orbitron', sans-serif;
+            color: #00d4ff;
+            font-size: 22px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .modal-body { font-size: 16px; line-height: 1.6; color: #ecf0f1; }
+        .modal-body ul { padding-left: 20px; }
+        .modal-body li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
 
     <div class="container">
         <div class="card profile">
-            <!-- Foto de Perfil Oval e Grande -->
             <img src="https://Rejlander77.github.io/1.png" alt="Fellipe Rejlander" class="avatar">
-            
             <h1>Fellipe Rejlander</h1>
-            
             <p class="bio">Tecnólogo de dispositivos de segurança com mais de 15 anos de experiência em instalações e manutenções com suporte técnico e desenvolvimento de ferramentas inteligentes e soluções práticas.</p>
             
-            <span class="prizm-tag">CRIADOR DO PRIZM SCAN 2.0</span>
+            <!-- BOTÃO INTERATIVO -->
+            <button class="prizm-btn" onclick="openModal( )">Conheça meus serviços</button>
 
-            <!-- LISTA DE SERVIÇOS -->
             <div class="services-list">
                 <div class="service-item"><i class="fas fa-video"></i> Câmeras IP/CFTV</div>
                 <div class="service-item"><i class="fas fa-fingerprint"></i> Controle de Acesso</div>
@@ -204,29 +256,11 @@
                 <div class="service-item"><i class="fas fa-tasks"></i> Controle de Tarefas</div>
             </div>
 
-            <!-- FORMULÁRIO -->
             <div class="form-container">
                 <form id="contactForm">
-                    <div class="form-group">
-                        <label>Nome do Cliente</label>
-                        <input type="text" id="name" placeholder="Seu nome..." required>
-                    </div>
-                    <div class="form-group">
-                        <label>Serviço Desejado</label>
-                        <select id="service">
-                            <option value="Instalação">Instalação</option>
-                            <option value="Manutenção">Manutenção</option>
-                            <option value="Diagnóstico Prizm Scan">Diagnóstico Prizm Scan</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Prioridade</label>
-                        <select id="priority">
-                            <option value="Baixa">Baixa</option>
-                            <option value="Média">Média</option>
-                            <option value="Alta">Alta (Urgente )</option>
-                        </select>
-                    </div>
+                    <div class="form-group"><label>Nome do Cliente</label><input type="text" id="name" placeholder="Seu nome..." required></div>
+                    <div class="form-group"><label>Serviço Desejado</label><select id="service"><option value="Instalação">Instalação</option><option value="Manutenção">Manutenção</option><option value="Diagnóstico Prizm Scan">Diagnóstico Prizm Scan</option></select></div>
+                    <div class="form-group"><label>Prioridade</label><select id="priority"><option value="Baixa">Baixa</option><option value="Média">Média</option><option value="Alta">Alta (Urgente)</option></select></div>
                     <button type="button" class="btn-action" onclick="sendForm()">Enviar Solicitação</button>
                 </form>
             </div>
@@ -234,13 +268,35 @@
             <div class="social-links">
                 <a href="https://wa.me/5511945412377?text=Olá!%20me%20chamo:%20(%20 )%20gostaria%20de%20solicitar%20um%20orçamento,%20quando%20está%20disponível?" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 <a href="https://www.linkedin.com/in/fellipe-rejlander-81232b217/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:frejlander@gmail.com?subject=Solicitação de Serviço&body=Nome: %0A%0AManutenção ou Instalação: %0A%0ANível de Prioridade: "><i class="fas fa-envelope"></i></a>
+                <a href="mailto:frejlander@gmail.com?subject=Solicitação de Serviço&body=Nome: "><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ESTRUTURA DA MODAL -->
+    <div id="servicesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal( )">&times;</span>
+            <div class="modal-title">NOSSAS SOLUÇÕES INTELIGENTES</div>
+            <div class="modal-body">
+                <p>Oferecemos uma gama completa de serviços de segurança de alta tecnologia, incluindo:</p>
+                <ul>
+                    <li><strong>PRIZM SCAN 2.0:</strong> Diagnóstico avançado de rede e monitoramento de ativos em tempo real.</li>
+                    <li><strong>Projetos de CFTV IP:</strong> Implementação de câmeras de alta resolução com análise inteligente de vídeo.</li>
+                    <li><strong>Controle de Acesso:</strong> Biometria, reconhecimento facial e sistemas de tags de alta segurança.</li>
+                    <li><strong>Alarmes e Cercas:</strong> Proteção perimetral ativa com integração móvel para alertas instantâneos.</li>
+                    <li><strong>Consultoria Técnica:</strong> Suporte especializado para condomínios e empresas que buscam modernização.</li>
+                </ul>
+                <p style="margin-top: 20px; color: #00d4ff; font-weight: bold;">Fellipe Rejlander - Inovação e Segurança em cada conexão.</p>
             </div>
         </div>
     </div>
 
     <script>
-        function sendForm( ) {
+        function openModal() { document.getElementById('servicesModal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('servicesModal').style.display = 'none'; }
+        window.onclick = function(event) { if (event.target == document.getElementById('servicesModal')) { closeModal(); } }
+        function sendForm() {
             const name = document.getElementById('name').value;
             const service = document.getElementById('service').value;
             const priority = document.getElementById('priority').value;
